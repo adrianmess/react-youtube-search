@@ -18,7 +18,10 @@ class App extends Component {
       selectedVideo: null
      };
 
-    YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
+
+
+  videoSearch(searchterm) {
+    YTSearch({key: API_KEY, searchterm: 'surfboards'}, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
@@ -26,6 +29,8 @@ class App extends Component {
       // this.setState({ videos: videos});
     });
   }
+  }
+
   render() {
     return (
       <div>
